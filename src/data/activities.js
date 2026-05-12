@@ -1,0 +1,73 @@
+// Mock data — GET /api/v1/activities
+export const activities = [
+  {
+    id: 1,
+    title: 'Sensorlar bilan ishlash',
+    description: 'Harorat, masofa, yorug‘lik va harakat sensorlarini real loyihalarda qo‘llash.',
+    icon: 'Radar',
+    gradient: 'from-neon-blue to-cyan-400',
+  },
+  {
+    id: 2,
+    title: 'Robot yasash',
+    description: 'Arduino platasi asosida haqiqiy robotlarni mexanikadan boshlab yig‘ish.',
+    icon: 'Bot',
+    gradient: 'from-cyan-400 to-blue-500',
+  },
+  {
+    id: 3,
+    title: 'Dasturlash',
+    description: 'C++ va blok asosidagi dasturlash bilan robot xulq-atvorini kodlash.',
+    icon: 'Code2',
+    gradient: 'from-blue-500 to-indigo-500',
+  },
+  {
+    id: 4,
+    title: 'Mini o‘yinlar',
+    description: 'Jamoaviy interaktiv o‘yinlar orqali muhandislik tafakkurini rivojlantirish.',
+    icon: 'Gamepad2',
+    gradient: 'from-indigo-500 to-purple-500',
+  },
+  {
+    id: 5,
+    title: 'Ekskursiyalar',
+    description: 'IT kompaniyalar, ishlab chiqarish va innovatsion markazlarga sayohatlar.',
+    icon: 'MapPin',
+    gradient: 'from-purple-500 to-pink-500',
+  },
+  {
+    id: 6,
+    title: 'Shaxsiy robot',
+    description: 'Har bir bola lagerni o‘zining yig‘ilgan shaxsiy roboti bilan tugatadi.',
+    icon: 'Cpu',
+    gradient: 'from-pink-500 to-rose-500',
+  },
+  {
+    id: 7,
+    title: 'Tabiat tadqiqotlari',
+    description: 'Ochiq havoda STEM tajribalari, sensorlardan foydalanib ma’lumot yig‘ish.',
+    icon: 'Leaf',
+    gradient: 'from-emerald-400 to-teal-500',
+  },
+  {
+    id: 8,
+    title: 'Mantiq va matematika',
+    description: 'Algoritmik fikrlash va muhandislik matematikasi asoslari amaliyotda.',
+    icon: 'Sigma',
+    gradient: 'from-teal-500 to-cyan-500',
+  },
+  {
+    id: 9,
+    title: 'Aqliy o‘yinlar',
+    description: 'Shaxmat, mantiqiy boshqotirma va strategik fikrlash mashqlari.',
+    icon: 'Brain',
+    gradient: 'from-amber-400 to-orange-500',
+  },
+  {
+    id: 10,
+    title: 'AI asoslari',
+    description: 'Sun’iy intellekt nima va qanday ishlaydi — bolalar tilidagi tushuntirishlar.',
+    icon: 'Sparkles',
+    gradient: 'from-fuchsia-500 to-neon-purple',
+  },
+];
