@@ -1,4 +1,4 @@
-import { Bot, Send, Instagram, Youtube, Facebook, Phone, Mail, MapPin } from 'lucide-react';
+import { Bot, Send, Instagram, Phone, Mail, MapPin } from 'lucide-react';
 import { brand, navLinks } from '../data/navigation';
 import { contact } from '../data/contact';
 import { smoothScrollTo } from '../utils/helpers';
@@ -6,8 +6,6 @@ import { smoothScrollTo } from '../utils/helpers';
 const socials = [
   { id: 'tg', icon: Send, href: contact.telegram, label: 'Telegram' },
   { id: 'ig', icon: Instagram, href: contact.instagram, label: 'Instagram' },
-  { id: 'yt', icon: Youtube, href: contact.youtube, label: 'YouTube' },
-  { id: 'fb', icon: Facebook, href: contact.facebook, label: 'Facebook' },
 ];
 
 const Footer = () => {
@@ -99,14 +97,6 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
-          <div>© 2026 Robocode IT Academy. Barcha huquqlar himoyalangan.</div>
-          <div className="flex items-center gap-1.5">
-            <span>Andijonda</span>
-            <span className="w-1 h-1 rounded-full bg-white/30" />
-            <span className="text-white/60">muhabbat bilan tayyorlandi</span>
-          </div>
-        </div>
       </div>
     </footer>
   );

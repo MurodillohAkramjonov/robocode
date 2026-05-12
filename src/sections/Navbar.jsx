@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X, Bot } from 'lucide-react';
+import { Menu, X, Bot, Sun, Moon } from 'lucide-react';
 import { navLinks, brand } from '../data/navigation';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import { cx, smoothScrollTo } from '../utils/helpers';
 import GradientButton from '../components/GradientButton';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
   const { scrolled } = useScrollPosition(40);
   const [open, setOpen] = useState(false);
+  const { theme, toggle } = useTheme();
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -81,8 +83,19 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          {/* Theme toggle + Desktop CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              type="button"
+              onClick={toggle}
+              aria-label="Temani o'zgartirish"
+              className="w-10 h-10 rounded-xl glass flex items-center justify-center
+                         hover:border-neon-blue/40 transition-all duration-300"
+            >
+              {theme === 'dark'
+                ? <Sun className="w-4 h-4 text-white/70" />
+                : <Moon className="w-4 h-4 text-slate-600" />}
+            </button>
             <GradientButton href="#pricing" size="sm">
               Joy band qilish
             </GradientButton>
@@ -170,8 +183,19 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="mt-auto mb-10"
+                className="mt-auto mb-10 flex flex-col gap-3"
               >
+                <button
+                  type="button"
+                  onClick={toggle}
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl glass
+                             text-sm font-medium transition-all duration-300
+                             hover:border-neon-blue/40"
+                >
+                  {theme === 'dark'
+                    ? <><Sun className="w-4 h-4 text-white/70" /><span className="text-white/70">Kunduzgi rejim</span></>
+                    : <><Moon className="w-4 h-4 text-slate-600" /><span className="text-slate-600">Tungi rejim</span></>}
+                </button>
                 <GradientButton
                   href="#pricing"
                   onClick={() => setOpen(false)}

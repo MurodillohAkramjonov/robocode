@@ -15,7 +15,6 @@
       radial-gradient(at 20% 0%, rgba(0, 132, 255, 0.15) 0px, transparent 50%),
       radial-gradient(at 80% 100%, rgba(168, 85, 247, 0.10) 0px, transparent 50%),
       #070b18;
-    background-attachment: fixed;
   }
 
   ::selection {
@@ -110,6 +109,137 @@
     mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1), rgba(0,0,0,0) 70%);
     -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1), rgba(0,0,0,0) 70%);
   }
+}
+
+/* ===== LIGHT THEME ===== */
+[data-theme="light"] body {
+  background:
+    radial-gradient(at 20% 0%, rgba(0, 132, 255, 0.10) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgba(168, 85, 247, 0.07) 0px, transparent 50%),
+    #f0f5ff;
+  color: #0f172a;
+}
+
+/* Navbar */
+[data-theme="light"] header.fixed {
+  background-color: rgba(240, 245, 255, 0.85) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Mobile drawer */
+[data-theme="light"] .bg-dark-200\/95 { background-color: rgba(240, 245, 255, 0.97) !important; }
+[data-theme="light"] .bg-dark-300\/80 { background-color: rgba(220, 230, 255, 0.85) !important; }
+
+/* Section backgrounds */
+[data-theme="light"] .bg-dark-200,
+[data-theme="light"] .bg-dark-100,
+[data-theme="light"] .bg-dark-300,
+[data-theme="light"] .bg-dark-400,
+[data-theme="light"] .bg-dark-50 { background-color: #f0f5ff !important; }
+
+/* Glass components */
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+}
+[data-theme="light"] .glass-strong {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09) !important;
+}
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+}
+[data-theme="light"] .glass-card:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  border-color: rgba(0, 132, 255, 0.30) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Inline bg-white/X cards */
+[data-theme="light"] .bg-white\/\[0\.02\] { background-color: rgba(255, 255, 255, 0.80) !important; }
+[data-theme="light"] .bg-white\/\[0\.03\] { background-color: rgba(255, 255, 255, 0.84) !important; }
+[data-theme="light"] .bg-white\/\[0\.04\] { background-color: rgba(255, 255, 255, 0.88) !important; }
+[data-theme="light"] .bg-white\/\[0\.06\] { background-color: rgba(255, 255, 255, 0.92) !important; }
+[data-theme="light"] .bg-white\/\[0\.08\] { background-color: rgba(255, 255, 255, 0.95) !important; }
+[data-theme="light"] .hover\:bg-white\/\[0\.06\]:hover { background-color: rgba(255, 255, 255, 0.92) !important; }
+[data-theme="light"] .hover\:bg-white\/\[0\.08\]:hover { background-color: rgba(255, 255, 255, 0.95) !important; }
+[data-theme="light"] .hover\:bg-white\/\[0\.10\]:hover { background-color: rgba(255, 255, 255, 0.98) !important; }
+
+/* Borders */
+[data-theme="light"] .border-white\/\[0\.04\] { border-color: rgba(0, 0, 0, 0.08) !important; }
+[data-theme="light"] .border-white\/\[0\.06\] { border-color: rgba(0, 0, 0, 0.09) !important; }
+[data-theme="light"] .border-white\/\[0\.08\] { border-color: rgba(0, 0, 0, 0.10) !important; }
+[data-theme="light"] .border-white\/\[0\.12\] { border-color: rgba(0, 0, 0, 0.13) !important; }
+[data-theme="light"] .border-white\/10  { border-color: rgba(0, 0, 0, 0.10) !important; }
+[data-theme="light"] .border-white\/5   { border-color: rgba(0, 0, 0, 0.07) !important; }
+[data-theme="light"] .border-t          { border-top-color: rgba(0, 0, 0, 0.08) !important; }
+[data-theme="light"] .border-b          { border-bottom-color: rgba(0, 0, 0, 0.08) !important; }
+
+/* Text overrides — oq fonda o'qilishi uchun past opacitylar ko'tariladi */
+[data-theme="light"] .text-white         { color: #0f172a !important; }
+[data-theme="light"] .text-white\/90     { color: rgba(15, 23, 42, 0.90) !important; }
+[data-theme="light"] .text-white\/85     { color: rgba(15, 23, 42, 0.88) !important; }
+[data-theme="light"] .text-white\/80     { color: rgba(15, 23, 42, 0.82) !important; }
+[data-theme="light"] .text-white\/75     { color: rgba(15, 23, 42, 0.76) !important; }
+[data-theme="light"] .text-white\/70     { color: rgba(15, 23, 42, 0.70) !important; }
+[data-theme="light"] .text-white\/65     { color: rgba(15, 23, 42, 0.66) !important; }
+[data-theme="light"] .text-white\/60     { color: rgba(15, 23, 42, 0.62) !important; }
+[data-theme="light"] .text-white\/55     { color: rgba(15, 23, 42, 0.58) !important; }
+[data-theme="light"] .text-white\/50     { color: rgba(15, 23, 42, 0.54) !important; }
+[data-theme="light"] .text-white\/45     { color: rgba(15, 23, 42, 0.60) !important; }
+[data-theme="light"] .text-white\/40     { color: rgba(15, 23, 42, 0.56) !important; }
+[data-theme="light"] .text-white\/35     { color: rgba(15, 23, 42, 0.55) !important; }
+[data-theme="light"] .text-white\/30     { color: rgba(15, 23, 42, 0.52) !important; }
+[data-theme="light"] .text-white\/25     { color: rgba(15, 23, 42, 0.50) !important; }
+[data-theme="light"] .text-white\/20     { color: rgba(15, 23, 42, 0.46) !important; }
+
+/* Dark gradient → light gradient (masalan Pricing kartasi) */
+[data-theme="light"] .from-dark-100 {
+  --tw-gradient-from: #dce8ff;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(220, 232, 255, 0));
+}
+[data-theme="light"] .from-dark-200 {
+  --tw-gradient-from: #e4eeff;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(228, 238, 255, 0));
+}
+[data-theme="light"] .to-dark-100 { --tw-gradient-to: #dce8ff; }
+[data-theme="light"] .to-dark-200 { --tw-gradient-to: #e4eeff; }
+
+/* from-white/X → light surface gradients */
+[data-theme="light"] .from-white\/\[0\.06\] {
+  --tw-gradient-from: rgba(255, 255, 255, 0.80);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0));
+}
+[data-theme="light"] .to-white\/\[0\.02\] { --tw-gradient-to: rgba(255, 255, 255, 0.50); }
+
+/* Scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-track { background: #dde6f8; }
+
+/* ===== MOBILE PERFORMANCE (< 1024px) ===== */
+@media (max-width: 1023px) {
+  /* CSS animatsiyalarni o'chirish */
+  .animate-pulse,
+  .animate-spin,
+  .animate-bounce,
+  .animate-ping      { animation: none !important; }
+
+  /* Backdrop-blur ni kamaytirish — GPU yuki */
+  .backdrop-blur-xl  { backdrop-filter: blur(6px) !important; }
+  .backdrop-blur-2xl { backdrop-filter: blur(8px) !important; }
+  .backdrop-blur-3xl { backdrop-filter: blur(10px) !important; }
+
+  /* Katta blur effektlarni o'chirish */
+  .blur-\[120px\],
+  .blur-\[140px\],
+  .blur-\[100px\]    { filter: blur(40px) !important; }
+
+  /* GPU kompozit layer — scroll silliq */
+  .fixed, header { transform: translateZ(0); }
 }
 
 @layer utilities {
