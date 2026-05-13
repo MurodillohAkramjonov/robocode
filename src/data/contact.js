@@ -1,8 +1,8 @@
 // Mock data — GET /api/v1/contact
 export const contact = {
-  phone: '+998 (90) 000-00-00',
-  phoneRaw: 'tel:+998900000000',
-  telegram: 'https://t.me/robocode_academy',
+  phone: '+998 (99) 899-90-05',
+  phoneRaw: 'tel:+998998999005',
+  telegram: 'https://t.me/robocodeadmin',
   instagram: 'https://instagram.com/robocode.academy',
   youtube: 'https://youtube.com/@robocode',
   facebook: 'https://facebook.com/robocode.academy',

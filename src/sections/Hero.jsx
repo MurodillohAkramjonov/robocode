@@ -3,12 +3,14 @@ import { ArrowRight, CalendarDays, MapPin, Users, Sparkles } from 'lucide-react'
 import { heroContent } from '../data/hero';
 import { fadeUp, staggerContainer } from '../animations/variants';
 import GradientButton from '../components/GradientButton';
+import { useBooking } from '../context/BookingContext';
 import RobotIllustration from '../components/RobotIllustration';
 import Particles from '../components/Particles';
 
 const ICONS = { CalendarDays, MapPin, Users };
 
 const Hero = () => {
+  const { openModal } = useBooking();
   return (
     <section
       id="hero"
@@ -67,7 +69,7 @@ const Hero = () => {
 
           {/* CTAs */}
           <motion.div variants={fadeUp} className="mt-10 flex flex-col sm:flex-row gap-3.5">
-            <GradientButton href="#pricing" size="lg" icon={ArrowRight}>
+            <GradientButton onClick={openModal} size="lg" icon={ArrowRight}>
               {heroContent.primaryCta}
             </GradientButton>
             <GradientButton href="#about" variant="secondary" size="lg">

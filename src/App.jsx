@@ -3,28 +3,31 @@ import { MotionConfig } from 'framer-motion';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import LoadingScreen from './components/LoadingScreen';
+import BookingModal from './components/BookingModal';
 import { ThemeProvider } from './context/ThemeContext';
+import { BookingProvider } from './context/BookingContext';
 
-// Mobileda (< 1024px) barcha Framer Motion animatsiyalarini o'chirish
 const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Mobileda loading ekranini qisqartirish
     const t = setTimeout(() => setLoading(false), isMobile ? 600 : 1400);
     return () => clearTimeout(t);
   }, []);
 
   return (
     <ThemeProvider>
-      <MotionConfig reducedMotion={isMobile ? 'always' : 'user'}>
-        <LoadingScreen visible={loading} />
-        <MainLayout>
-          <Home />
-        </MainLayout>
-      </MotionConfig>
+      <BookingProvider>
+        <MotionConfig reducedMotion={isMobile ? 'always' : 'user'}>
+          <LoadingScreen visible={loading} />
+          <BookingModal />
+          <MainLayout>
+            <Home />
+          </MainLayout>
+        </MotionConfig>
+      </BookingProvider>
     </ThemeProvider>
   );
 };

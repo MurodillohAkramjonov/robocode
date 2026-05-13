@@ -4,10 +4,12 @@ import { pricingPlan } from '../data/pricing';
 import SectionTitle from '../components/SectionTitle';
 import GradientButton from '../components/GradientButton';
 import { fadeUp, slideInLeft, slideInRight, staggerFast, viewportOnce } from '../animations/variants';
+import { useBooking } from '../context/BookingContext';
 
 const ICONS = { Users, HeartHandshake };
 
 const Pricing = () => {
+  const { openModal } = useBooking();
   return (
     <section id="pricing" className="relative section-padding">
       <div className="max-w-6xl mx-auto">
@@ -113,7 +115,7 @@ const Pricing = () => {
                 </motion.ul>
 
                 <div className="mt-9">
-                  <GradientButton href="#cta" size="lg" icon={ArrowRight} className="w-full sm:w-auto">
+                  <GradientButton onClick={openModal} size="lg" icon={ArrowRight} className="w-full sm:w-auto">
                     Joy band qilish
                   </GradientButton>
                 </div>

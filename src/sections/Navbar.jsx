@@ -6,11 +6,13 @@ import { useScrollPosition } from '../hooks/useScrollPosition';
 import { cx, smoothScrollTo } from '../utils/helpers';
 import GradientButton from '../components/GradientButton';
 import { useTheme } from '../context/ThemeContext';
+import { useBooking } from '../context/BookingContext';
 
 const Navbar = () => {
   const { scrolled } = useScrollPosition(40);
   const [open, setOpen] = useState(false);
   const { theme, toggle } = useTheme();
+  const { openModal } = useBooking();
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -96,7 +98,7 @@ const Navbar = () => {
                 ? <Sun className="w-4 h-4 text-white/70" />
                 : <Moon className="w-4 h-4 text-slate-600" />}
             </button>
-            <GradientButton href="#pricing" size="sm">
+            <GradientButton onClick={openModal} size="sm">
               Joy band qilish
             </GradientButton>
           </div>
@@ -197,8 +199,7 @@ const Navbar = () => {
                     : <><Moon className="w-4 h-4 text-slate-600" /><span className="text-slate-600">Tungi rejim</span></>}
                 </button>
                 <GradientButton
-                  href="#pricing"
-                  onClick={() => setOpen(false)}
+                  onClick={() => { setOpen(false); openModal(); }}
                   className="w-full"
                 >
                   Joy band qilish
