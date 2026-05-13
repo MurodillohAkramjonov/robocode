@@ -13,9 +13,22 @@ const FinalCTA = () => {
   const { openModal } = useBooking();
   const [mapOpen, setMapOpen] = useState(false);
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
   const handleAction = (id) => {
-    if (id === 'visit') { setMapOpen(true); return; }
-    if (id === 'site')  { openModal(); return; }
+    if (id === 'visit') {
+      if (isMobile) {
+        // Mobileda Google Maps ilovasiga to'g'ridan o'tkazish
+        window.open(
+          'https://www.google.com/maps/search/?api=1&query=40.745907676353305,72.34350871625519',
+          '_blank'
+        );
+      } else {
+        setMapOpen(true);
+      }
+      return;
+    }
+    if (id === 'site') { openModal(); return; }
   };
 
   return (
@@ -134,7 +147,7 @@ const FinalCTA = () => {
               transition={{ type: 'spring', stiffness: 320, damping: 28 }}
               className="fixed inset-0 z-50 flex items-center justify-center px-4 pointer-events-none"
             >
-              <div className="relative w-full max-w-2xl pointer-events-auto">
+              <div className="relative w-full max-w-3xl pointer-events-auto">
                 <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-neon-blue/30 to-neon-purple/30 blur-xl opacity-60" />
                 <div className="relative rounded-3xl overflow-hidden
                                 bg-dark-100 border border-white/10
